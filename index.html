@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarvest Digital | Smart Agriculture Solution</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --nature-green: #2d6a4f;
+            --light-green: #95d5b2;
+            --accent-gold: #ffb703;
+            --dark-forest: #1b4332;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        
+        .navbar {
+            background: white;
+            border-bottom: 3px solid var(--nature-green);
+        }
+
+        .nav-link {
+            color: var(--dark-forest) !important;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            color: var(--nature-green) !important;
+        }
+
+       
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .greeting-badge {
+            background: var(--accent-gold);
+            color: var(--dark-forest);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        
+        .page-section {
+            display: none;
+            padding: 80px 0;
+        }
+
+        .active-section {
+            display: block;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .card-service {
+            border: none;
+            border-bottom: 5px solid var(--light-green);
+            transition: 0.3s;
+            background: #fdfdfd;
+        }
+
+        .card-service:hover {
+            border-bottom: 5px solid var(--nature-green);
+            transform: translateY(-10px);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: var(--dark-forest);
+            color: white;
+            padding: 50px 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="navigateTo('home')">
+                <i class="bi bi-leaf-fill text-success fs-2 me-2"></i>
+                <span class="text-dark">ECO</span><span class="text-success">HARVEST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="navigateTo('home')">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="navigateTo('about')">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="navigateTo('services')">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="navigateTo('gallery')">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="navigateTo('contact')">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div id="home" class="page-section active-section">
+        <section class="hero">
+            <div class="container text-center">
+                <div class="greeting-badge" id="autoGreeting">Memuat...</div>
+                <h1 class="display-2 fw-bold mb-4">Masa Depan Pertanian Ada di Sini</h1>
+                <p class="fs-4 mb-5">Integrasi teknologi IoT dan AI untuk hasil panen yang lebih hijau dan berkelanjutan.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-success btn-lg px-4" onclick="navigateTo('services')">Lihat Solusi</button>
+                    <button class="btn btn-outline-light btn-lg px-4" onclick="navigateTo('about')">Pelajari Kami</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container my-5 py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="text-success mb-4">Revolusi Hijau Digital</h2>
+                    <p class="lead">EcoHarvest Digital hadir untuk menjembatani kesenjangan antara metode pertanian tradisional dengan kecanggihan teknologi modern.</p>
+                    <p>Kami menyediakan infrastruktur pemantauan tanah real-time, manajemen air otomatis, dan prediksi panen berbasis data untuk memastikan ketahanan pangan global tetap terjaga.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=600" alt="Ladang Modern" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Tentang EcoHarvest</h2>
+                <div class="mx-auto bg-success" style="height: 4px; width: 60px;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-10 mb-4">
+                    <p class="text-center fs-5">Didirikan pada tahun 2020, EcoHarvest Digital berdedikasi untuk menciptakan ekosistem pertanian yang efisien melalui teknologi. Kami percaya bahwa teknologi adalah kunci untuk memproduksi lebih banyak pangan dengan sumber daya yang lebih sedikit.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="p-4 bg-light border-start border-success border-5 shadow-sm h-100">
+                        <h3 class="h4 fw-bold text-success"><i class="bi bi-eye"></i> Visi Kami</h3>
+                        <p>Menjadi pionir dalam digitalisasi pertanian global guna menciptakan dunia tanpa kelaparan melalui inovasi teknologi hijau.</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="p-4 bg-light border-start border-success border-5 shadow-sm h-100">
+                        <h3 class="h4 fw-bold text-success"><i class="bi bi-check-circle"></i> Misi Kami</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-arrow-right text-success me-2"></i> Mengembangkan sensor IoT yang terjangkau bagi petani.</li>
+                            <li><i class="bi bi-arrow-right text-success me-2"></i> Memberdayakan komunitas lokal dengan literasi data.</li>
+                            <li><i class="bi bi-arrow-right text-success me-2"></i> Mengoptimalkan penggunaan air dan pupuk.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="services" class="page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Solusi Kami</h2>
+                <p class="text-muted">Teknologi yang dirancang khusus untuk pertumbuhan maksimal.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-service h-100 p-4 shadow-sm">
+                        <i class="bi bi-sensor-fill display-4 text-success mb-3"></i>
+                        <h4 class="fw-bold">Sensor IoT Tanah</h4>
+                        <p>Pemantauan kelembapan, suhu, dan nutrisi tanah secara otomatis langsung ke smartphone Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service h-100 p-4 shadow-sm">
+                        <i class="bi bi-cloud-rain-heavy display-4 text-success mb-3"></i>
+                        <h4 class="fw-bold">Irigasi Presisi</h4>
+                        <p>Sistem pengairan cerdas yang menyesuaikan volume air berdasarkan kebutuhan tanaman dan cuaca.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-service h-100 p-4 shadow-sm">
+                        <i class="bi bi-graph-up-arrow display-4 text-success mb-3"></i>
+                        <h4 class="fw-bold">Analitik Panen</h4>
+                        <p>Prediksi hasil panen dan analisis pasar menggunakan kecerdasan buatan (AI).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="gallery" class="page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Eksplorasi Lapangan</h2>
+                <p class="text-muted">Implementasi teknologi kami di berbagai lahan pertanian.</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="gallery-item shadow">
+                        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=400" alt="Sensor IoT">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item shadow">
+                        <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80&w=400" alt="Greenhouse">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item shadow">
+                        <img src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=400" alt="Tanaman Sehat">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item shadow">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="Laboratorium">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item shadow">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=600" alt="Sawah Digital">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="contact" class="page-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="display-5 fw-bold text-success mb-4">Mari Berkolaborasi</h2>
+                    <p class="mb-5">Hubungi kami untuk konsultasi gratis mengenai digitalisasi lahan pertanian Anda.</p>
+                    <div class="d-flex mb-4">
+                        <div class="bg-success text-white p-3 rounded-circle me-3">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Alamat</h5>
+                            <p>Gedung pahlawan no.5, Semarang, Jawa Tengah</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="bg-success text-white p-3 rounded-circle me-3">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Email</h5>
+                            <p>hello@ecoharvest.id</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="bg-success text-white p-3 rounded-circle me-3">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">WhatsApp</h5>
+                            <p>+62 895-3332-2763-3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="bg-white p-5 shadow rounded-4">
+                        <form id="formEco" onsubmit="alertSent(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Nama</label>
+                                    <input type="text" class="form-control bg-light border-0 py-3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Email</label>
+                                    <input type="email" class="form-control bg-light border-0 py-3" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Subjek Layanan</label>
+                                    <select class="form-select bg-light border-0 py-3">
+                                        <option>Instalasi IoT</option>
+                                        <option>Manajemen Greenhouse</option>
+                                        <option>Kemitraan Data</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Pesan</label>
+                                    <textarea class="form-control bg-light border-0 py-3" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success w-100 py-3 fw-bold">KIRIM PESAN SEKARANG</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="msgBox" class="mt-3 text-center text-success fw-bold d-none">
+                            <i class="bi bi-check-circle-fill"></i> Pesan Anda berhasil dikirim ke EcoHarvest!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="container">
+            <div class="row justify-content-between g-4">
+                <div class="col-md-4">
+                    <h4 class="fw-bold mb-4">ECOHARVEST</h4>
+                    <p class="text-white-50">Mengubah masa depan pangan melalui teknologi cerdas dan berkelanjutan untuk generasi mendatang.</p>
+                </div>
+                <div class="col-md-4 text-md-center">
+                    <h5 class="fw-bold mb-4">Navigasi Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none" onclick="navigateTo('about')">Visi & Misi</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none" onclick="navigateTo('services')">Layanan</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none" onclick="navigateTo('contact')">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5 class="fw-bold mb-4">Ikuti Kami</h5>
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 opacity-25">
+            <p class="text-center text-white-50 small mb-0">&copy; 2024 EcoHarvest Digital. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        
+        function setGreeting() {
+            const time = new Date().getHours();
+            const badge = document.getElementById('autoGreeting');
+            let text = "";
+
+            if (time >= 5 && time < 12) {
+                text = "Selamat Pagi, Salam Inovasi Hijau!";
+            } else if (time >= 12 && time < 15) {
+                text = "Selamat Siang, Semangat Produktivitas!";
+            } else if (time >= 15 && time < 18) {
+                text = "Selamat Sore, Waktunya Panen Data!";
+            } else {
+                text = "Selamat Malam, Persiapkan Hari Esok!";
+            }
+
+            badge.innerText = text;
+        }
+
+        
+        function navigateTo(sectionId) {
+            
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => {
+                sec.classList.remove('active-section');
+            });
+
+            
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active-section');
+                window.scrollTo(0, 0);
+            }
+
+            
+            const bsCollapse = bootstrap.Collapse.getInstance(document.getElementById('mainNav'));
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
+        }
+
+        
+        function alertSent(e) {
+            e.preventDefault();
+            document.getElementById('formEco').classList.add('d-none');
+            document.getElementById('msgBox').classList.remove('d-none');
+            
+            setTimeout(() => {
+                document.getElementById('formEco').reset();
+                document.getElementById('formEco').classList.remove('d-none');
+                document.getElementById('msgBox').classList.add('d-none');
+            }, 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', setGreeting);
+    </script>
+</body>
+</html>
